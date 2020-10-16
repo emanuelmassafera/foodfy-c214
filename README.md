@@ -8,6 +8,8 @@
 
 <h4 align="center">🚧   Em construção 🚀 🚧</h4>
 
+[![Build Status](https://travis-ci.org/emanuelmassafera/foodfy-c214.svg?branch=master)](https://travis-ci.org/emanuelmassafera/foodfy-c214)
+
 ---
 
 Tabela de conteúdos
