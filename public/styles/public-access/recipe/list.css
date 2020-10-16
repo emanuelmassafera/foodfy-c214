@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 150vh;
+}
+
+header {
+    width: 940px;
+    height: 27px;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    left: 0;
+    width: 90.6px;
+    height: 26.9px;
+    opacity: 100%;
+    color: #111111;
+}
+
+header .sobre {
+    position: absolute;
+    left: 25.2%;
+    width: 42px;
+    height: 19px;
+    opacity: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    color: #111111;
+    line-height: 30px;
+}
+
+header .receitas {
+    position: absolute;
+    left: 34.2%;
+    width: 42px;
+    height: 19px;
+    opacity: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    color: #111111;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+header .chefs {
+    position: absolute;
+    left: 45.2%;
+    width: 42px;
+    height: 19px;
+    opacity: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    color: #111111;
+    line-height: 30px;
+}
+
+header .filter {
+    position: absolute;
+    right: 0;
+}
+
+header .filter input {
+    width: 246px;
+    height: 37px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 15px;
+    margin-right: 8px;
+}
+
+header .filter button {
+    background-color: #6558C3;
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    text-align: right;
+    padding: 9px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search {
+    width: 940px;
+    margin: 20px auto 0px auto;
+}
+
+.search p {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #111111;
+}
+
+.notfound {
+    width: 940px;
+    margin: 40px auto 0px auto;
+}
+
+.notfound p {
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+}
+
+.cards {
+    width: 940px;
+    height: 450px;
+    margin: 20px auto 40px auto;
+    position: relative;
+    opacity: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.card-title p {
+    opacity: 100%;
+    color: #111111;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 15px;
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info p {
+    opacity: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #777777;
+    margin-top: 5px;
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal-overlay {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    opacity: 100%;
+    border-radius: 16px;
+    width: 30.1%;
+    height: 44.8%;
+    margin: 30vh auto;
+    position: relative;
+    text-align: center;
+    padding: 30px 30px 5px 30px;
+}
+
+.modal img{
+    border-radius: 50px;
+    width: 100%;
+    height: 200px;
+}
+
+.modal-card-title p {
+    font-size: 24px;
+    line-height: 28px;
+    color: #111111;
+    margin-top: 10px;
+}
+
+.modal-card-info p{
+    font-size: 18px;
+    color: #777777;
+    line-height: 21px;
+    margin-top: 2px;
+    margin-bottom: 35px;
+}
+
+.close-modal a {
+    font-size: 16px;
+    line-height: 19px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pagination {
+    display: flex;
+    width: 940px;
+    margin: auto auto 300px auto;
+    justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+    text-decoration: none;
+    color: var(#111111);
+    margin: 8px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid #111111;
+}
+
+.credits {
+    margin-top: auto;
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 62px;
+    text-align: center;
+}
+
+.credits p {
+    opacity: 100%;
+    color: #999999;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 22px;
+}
