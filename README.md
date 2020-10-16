@@ -26,7 +26,7 @@ Tabela de conteúdos
 
 ## Sobre o projeto <a name="-sobre-o-projeto" style="text-decoration:none"></a>
 
-Foodfy é um site de receitas completo, que conta com parte de visita ao público e parte administrativa. Nele é possível cadastrar usuários, chefs e, claro, receitas! Foi desenvolvido com JavaScript em toda stack e utiliza o banco de dados relacional PostgreSQL. O escopo e as orientações para realização deste projeto são do Bootcamp LaunchBase, da Rocketseat.
+Foodfy é um site de receitas completo, que conta com parte de visita ao público e parte administrativa. Nele é possível cadastrar usuários, chefs e, claro, receitas! Foi desenvolvido com JavaScript em toda stack e utiliza o banco de dados relacional PostgreSQL.
 
 ---
 
