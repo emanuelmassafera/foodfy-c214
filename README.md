@@ -42,6 +42,7 @@ Foodfy é um site de receitas completo, que conta com parte de visita ao públic
 - **[Bcrypt](https://github.com/dcodeIO/bcrypt.js)**
 - **[Nodemailer](https://nodemailer.com/about/)**
 - **[Nunjucks](https://github.com/mozilla/nunjucks)**
+- **[Travis CI](https://travis-ci.org/)**
 
 ---
 
