@@ -124,7 +124,7 @@ $ .\pg_ctl.exe -D "C:\Program Files\PostgreSQL\12\data" stop
 
 ```
 
-Depois de ligar o PostgreSQL, acesse o pgAdmin (o programa é instalado junto com o postgres) e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção Restore do banco e carregue o arquivo [foodfy.sql](https://github.com/emanuelmassafera/foodfy/blob/master/src/foodfy.sql) presente neste respositório. Você pode checar se o banco foi restaurado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. Caso queira, acesse o arquivo [pgAdmin.md](https://github.com/emanuelmassafera/foodfy/blob/master/pgAdmin.md) para ver as imagens destes passos.
+Depois de ligar o PostgreSQL, acesse o pgAdmin (o programa é instalado junto com o postgres) e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção Restore do banco e carregue o arquivo [foodfy.sql](https://github.com/emanuelmassafera/foodfy-c214/blob/master/src/foodfy.sql) presente neste respositório. Você pode checar se o banco foi restaurado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. Caso queira, acesse o arquivo [pgAdmin.md](https://github.com/emanuelmassafera/foodfy-c214/blob/master/pgAdmin.md) para ver as imagens destes passos.
 
 #### Observações
 
@@ -136,7 +136,7 @@ O Mailtrap será responsável por simular uma caixa de e-mails para as funcional
 
 #### Configurando o Mailtrap
 
-Entre no site do [Mailtrap](https://mailtrap.io/) e faça seu cadastro. Quando já estiver cadastrado, acesse a aba Inboxes, crie uma nova inbox com o nome de foodfy, entre no seção SMTP Settings e mude Integrations para Nodemailer. Agora copie o código gerado, cole no arquivo [mailer.js](https://github.com/emanuelmassafera/foodfy/blob/master/src/lib/mailer.js) e faça algumas pequenas alterações para que fique semelhante a este:
+Entre no site do [Mailtrap](https://mailtrap.io/) e faça seu cadastro. Quando já estiver cadastrado, acesse a aba Inboxes, crie uma nova inbox com o nome de foodfy, entre no seção SMTP Settings e mude Integrations para Nodemailer. Agora copie o código gerado, cole no arquivo [mailer.js](https://github.com/emanuelmassafera/foodfy-c214/blob/master/src/lib/mailer.js) e faça algumas pequenas alterações para que fique semelhante a este:
 
 ```javascript
 
@@ -192,6 +192,6 @@ Ao acessar *localhost:3000* você estará na seção pública do foodfy. Para te
 
 ## Licença <a name="-licenca" style="text-decoration:none"></a>
 
-Esse repositório está licenciado pela **MIT LICENSE**. Para informações detalhadas, leia o arquivo [LICENSE](https://github.com/emanuelmassafera/rick-and-morty-tracker/blob/master/LICENSE). 
+Esse repositório está licenciado pela **MIT LICENSE**. Para informações detalhadas, leia o arquivo [LICENSE](https://github.com/emanuelmassafera/foodfy-c214/blob/master/LICENSE). 
 
 Made with ♥ by Emanuel Massafera :wave: [Get in touch!](https://www.linkedin.com/in/emanuelmassafera/)
