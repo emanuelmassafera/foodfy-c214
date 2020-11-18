@@ -1,7 +1,7 @@
 {% extends "private-access/layout.njk" %}
 
 {% block head %}
-    <title>Create</title>
+    <title>Cadastrar chef</title>
     <link rel="stylesheet" href="/styles/private-access/chef/create.css">
 {% endblock head %}
 
@@ -22,18 +22,25 @@
         <div class="image-chef">
             <h3>Avatar</h3>
 
-            <div id="photos-upload">
-                <p>Enviar avatar</p>
-                <input 
-                    type="file" 
-                    name="photos" 
-                    id="photos-input" 
-                    multiple="multiple" 
-                    accept="image/*" 
-                    onchange="PhotosUpload.handleFileInput(event)"
-                >
-            </div>
+            <div class="photos-container">
+                <div id="photos-upload">
+                    <p>Enviar avatar</p>
+                    
+                    <input 
+                        type="file" 
+                        name="photos" 
+                        id="photos-input" 
+                        required
+                        multiple="multiple" 
+                        accept="image/*" 
+                        onchange="PhotosUpload.handleFileInput(event)"
+                    >
+                </div>
 
+                <div id="photos-preview">
+
+                </div>
+            </div>
         </div>
 
     </form>

@@ -38,23 +38,55 @@ module.exports = {
     async post(req, res) {
         const keys = Object.keys(req.body);
 
+        let results = await Recipe.chefSelectOptions();
+        const options = results.rows;
+
         for (key of keys) {
             if (req.body[key] == "" && key != "information") {
-                return res.send("Please, fill all fields!");
+                return res.render("private-access/recipe/create", { 
+                    session: req.session,
+                    error: "Preencha todos os campos",
+                    chefOptions: options
+                });
             }
         }
 
         if (req.files.length == 0) {
-            return res.send("Select at least one image!");
+            return res.render("private-access/recipe/create", { 
+                session: req.session,
+                error: "Selecione o menos uma imagem",
+                chefOptions: options
+            });
         }
-
-        let results = await Recipe.create(req.body, req.session.userId);
-        const recipeId = results.rows[0].id;
+        
+        const recipeId = await Recipe.create(req.body, req.session.userId);
 
         const filesPromises = req.files.map(file => File.create({ ...file, recipe_id: recipeId, session: req.session }));
         await Promise.all(filesPromises);
 
-        return res.redirect(`/admin/recipes/${recipeId}`);
+
+
+        results = await Recipe.find(recipeId);
+        const recipe = results.rows[0];
+
+        if (!recipe) return res.render("unexpected-error/unexpected-error");
+
+        results = await Recipe.files(recipe.id);
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }));
+
+        results = await User.isAdmin(req.session.userId);
+        const sessionIsAdmin = results.rows[0];
+
+        return res.render("private-access/recipe/show", { 
+            recipe, 
+            files, 
+            session: req.session, 
+            sessionIsAdmin,
+            success: "Receita cadastrada com sucesso", 
+        });
     },
 
     async show(req, res) {
@@ -62,7 +94,7 @@ module.exports = {
         let results = await Recipe.find(req.params.id);
         const recipe = results.rows[0];
 
-        if (!recipe) return res.send("Recipe not found!");
+        if (!recipe) return res.render("not-found/not-found");
 
         results = await Recipe.files(recipe.id);
         const files = results.rows.map(file => ({
@@ -81,7 +113,7 @@ module.exports = {
         let results = await Recipe.find(req.params.id);
         const recipe = results.rows[0];
 
-        if (!recipe) return res.send("Recipe not found!");
+        if (!recipe) return res.render("not-found/not-found");
 
         results = await Recipe.chefSelectOptions();
         const options = results.rows;
@@ -101,7 +133,7 @@ module.exports = {
 
         for (key of keys) {
             if (req.body[key] == "" && key != "removed_files" && key != "information") {
-                return res.send("Please, fill all fields!");
+                return res.render("unexpected-error/unexpected-error");
             }
         }
 
@@ -123,14 +155,59 @@ module.exports = {
 
         await Recipe.update(req.body);
 
-        return res.redirect(`/admin/recipes/${req.body.id}`);
 
+        let results = await Recipe.find(req.body.id);
+        const recipe = results.rows[0];
+
+        if (!recipe) return res.render("unexpected-error/unexpected-error");
+
+        results = await Recipe.files(recipe.id);
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }));
+
+        results = await User.isAdmin(req.session.userId);
+        const sessionIsAdmin = results.rows[0];
+
+        return res.render("private-access/recipe/show", { 
+            recipe, 
+            files, 
+            session: req.session, 
+            sessionIsAdmin,
+            success: "Receita atualizada com sucesso", 
+        });
     },
 
     async delete(req, res) {
 
         await Recipe.delete(req.body.id);
 
-        return res.redirect("/admin/recipes");
+        let results = await Recipe.all();
+        let recipes = results.rows;
+
+        for (let index = 0; index < recipes.length; index++) {
+            results = await Recipe.files(recipes[index].id);
+            const files = results.rows.map(file => ({
+                ...file,
+                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+            }));
+
+            if(files[0]) {
+                recipes[index].image = files[0].src;
+            } else {
+                recipes[index].image = "//placehold.it/500x360";
+            }
+        }
+
+        results = await User.isAdmin(req.session.userId);
+        const sessionIsAdmin = results.rows[0];
+
+        return res.render("private-access/recipe/list", { 
+            recipes, 
+            session: req.session, 
+            sessionIsAdmin,
+            success: "Receita removida com sucesso" 
+        });
     },
 }
