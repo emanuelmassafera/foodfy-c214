@@ -145,7 +145,7 @@ Depois de ligar o PostgreSQL, acesse o pgAdmin (o programa é instalado junto co
 
 ##### Segunda opção
 
-Depois de ligar o PostgreSQL, acesse o Postbird e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção de importar um arquivo .sql e importe o arquivo [foodfydb.sql](https://github.com/emanuelmassafera/foodfy/blob/master/foodfydb.sql) presente neste respositório. Você pode checar se o banco foi importado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. 
+Depois de ligar o PostgreSQL, acesse o Postbird e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção de importar um arquivo .sql e importe o arquivo [foodfydb.sql](https://github.com/emanuelmassafera/foodfy-c214/blob/master/foodfydb.sql) presente neste respositório. Você pode checar se o banco foi importado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. 
 
 ###### Populando o banco de dados
 
@@ -159,7 +159,7 @@ $ node seeds.js
 
 #### Observações
 
-Você deverá indicar suas informações de usuário e senha do postgres no arquivo [db.js](https://github.com/emanuelmassafera/foodfy/blob/master/src/config/db.js).
+Você deverá indicar suas informações de usuário e senha do postgres no arquivo [db.js](https://github.com/emanuelmassafera/foodfy-c214/blob/master/src/config/db.js).
 
 ### Por fim, o último passo é configurar o Mailtrap
 
