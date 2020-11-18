@@ -19,6 +19,7 @@ Tabela de conteúdos
    * [Tecnologias](#-tecnologias)
    * [Funcionalidades](#-funcionalidades)
    * [Layout](#-layout)
+   * [UML](#-uml)
    * [Como executar o projeto](#-como-executar-o-projeto)
    * [Autor](#-autor)
    * [Licença](#-licenca)
@@ -80,6 +81,14 @@ Foodfy é um site de receitas completo, que conta com parte de visita ao públic
 
 <h1 align="center">
     <img alt="Gif Responsividade" src="./public/assets/privateSection.gif" width="800px" />
+</h1>
+
+---
+
+## UML <a name="-uml" style="text-decoration:none"></a>
+
+<h1 align="center">
+    <img alt="UML" src="./public/assets/foodfydb.png" width="800px" />
 </h1>
 
 ---
