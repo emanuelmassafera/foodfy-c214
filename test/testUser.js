@@ -1,4 +1,6 @@
 const User = require("../src/app/models/User");
+const faker = require("faker");
+const { hash } = require("bcryptjs");
 
 QUnit.module("users tests");
 
@@ -9,24 +11,30 @@ QUnit.test("validate if lists all users", async assert => {
 });
 
 QUnit.test("validate if create", async assert => {
+    const password = await hash("1234", 8);
+
     const user = {
-        name: "User Test Create",
-        email: "user@testcreate.com",
-        password: "1234",
-        is_admin: false,
+        name: faker.name.findName(),
+        email: faker.internet.email(),
+        password: password,
+        is_admin: faker.random.boolean(),
     }
 
     const userId = await User.create(user);
 
     assert.ok(userId, "should be ok");
+
+    await User.delete(userId);
 });
 
 QUnit.test("validate if delete", async assert => {
+    const password = await hash("1234", 8);
+
     const user = {
-        name: "User Test Delete",
-        email: "user@test-delete.com",
-        password: "1234",
-        is_admin: false,
+        name: faker.name.findName(),
+        email: faker.internet.email(),
+        password: password,
+        is_admin: faker.random.boolean(),
     }
 
     const userId = await User.create(user);
@@ -40,20 +48,22 @@ QUnit.test("validate if delete", async assert => {
 });
 
 QUnit.test("validate if update", async assert => {
+    const password = await hash("1234", 8);
+
     let user = {
-        name: "User Test Update",
-        email: "user@test-update.com",
-        password: "1234",
-        is_admin: false,
+        name: faker.name.findName(),
+        email: faker.internet.email(),
+        password: password,
+        is_admin: faker.random.boolean(),
     }
 
     const userId = await User.create(user);
 
     user = {
-        name: "User Test Update Ok",
-        email: "user@test-update.com",
-        password: "1234",
-        is_admin: false,
+        name: `${user.name} Updated`,
+        email: user.email,
+        password: password,
+        is_admin: user.is_admin,
         id: userId,
     }
 
@@ -62,5 +72,7 @@ QUnit.test("validate if update", async assert => {
     const results = await User.find(userId);
     const userFound = results.rows[0];
 
-    assert.equal(userFound.name, "User Test Update Ok", "should be equal");
+    assert.equal(userFound.name, user.name, "should be equal");
+
+    await User.delete(userId);
 });
