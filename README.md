@@ -137,19 +137,11 @@ $ .\pg_ctl.exe -D "C:\Program Files\PostgreSQL\12\data" stop
 
 ```
 
-Agora você pode seguir por dois caminhos diferentes:
-
-##### Primeira opção
-
-Depois de ligar o PostgreSQL, acesse o pgAdmin (o programa é instalado junto com o postgres) e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção Restore do banco e carregue o arquivo [foodfy.sql](https://github.com/emanuelmassafera/foodfy-c214/blob/master/src/foodfy.sql) presente neste respositório. Você pode checar se o banco foi restaurado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. Caso queira, acesse o arquivo [pgAdmin.md](https://github.com/emanuelmassafera/foodfy-c214/blob/master/pgAdmin.md) para ver as imagens destes passos.
-
-##### Segunda opção
-
 Depois de ligar o PostgreSQL, acesse o Postbird e crie um banco de dados com o nome de foodfy. Feito isso, clique na opção de importar um arquivo .sql e importe o arquivo [foodfydb.sql](https://github.com/emanuelmassafera/foodfy-c214/blob/master/foodfydb.sql) presente neste respositório. Você pode checar se o banco foi importado verificando suas tabelas. Se tudo deu certo até aqui, o seu banco de dados já está criado. 
 
 ###### Populando o banco de dados
 
-Caso tenha optado pelo segundo caminho, use da estratégia de popular o seu banco de dados com o *seeds.js*. Para popular o banco de dados com informações fakes e geradas automaticamente, abra o terminal no diretório do projeto e execute o comando:
+Para popular o banco de dados com informações fakes e geradas automaticamente, abra o terminal no diretório do projeto e execute o comando:
 
 ```bash
 
