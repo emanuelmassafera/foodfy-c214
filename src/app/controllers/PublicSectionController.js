@@ -1,5 +1,6 @@
 const Recipe = require("../models/Recipe");
 const Chef = require("../models/Chef");
+const About = require("../models/About");
 
 module.exports = {
     async home(req, res) {
@@ -27,8 +28,10 @@ module.exports = {
 
     },
 
-    about(req, res) {
-        return res.render("public-access/about/about");
+    async about(req, res) {
+        const about = await About.getAboutInformation();
+        
+        return res.render("public-access/about/about", { about });
     },
 
     async recipes(req, res) {
