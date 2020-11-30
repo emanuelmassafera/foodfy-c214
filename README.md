@@ -47,6 +47,8 @@ Foodfy é um site de receitas completo, que conta com parte de visita ao públic
 - **[Nunjucks](https://github.com/mozilla/nunjucks)**
 - **[Travis CI](https://travis-ci.org/)**
 - **[Faker](https://github.com/Marak/Faker.js#readme)**
+- **[Axios](https://github.com/axios/axios)**
+- **[Bacon Ipsum API](https://baconipsum.com/json-api/)**
 
 ---
 
