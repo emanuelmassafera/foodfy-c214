@@ -4,6 +4,10 @@ const faker = require("faker");
 const { hash } = require("bcryptjs");
 
 describe('users tests', () => { 
+    afterAll(() => {
+        db.end();
+    });
+
     test("validate if lists all users", async () => {
         const users = await User.all();
 

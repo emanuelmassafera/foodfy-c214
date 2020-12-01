@@ -9,7 +9,7 @@ module.exports = {
     all() {
         try {
             const query = `SELECT * FROM users;`
-    
+            
             return db.query(query);
         } catch (error) {
             console.error(error);

@@ -3,6 +3,10 @@ const File = require("../src/app/models/File");
 const faker = require("faker");
 
 describe('chefs tests', () => {
+    afterAll(() => {
+        db.end();
+    });
+    
     test("validate if lists all chefs", async () => {
         const chefs = await Chef.all();
     
