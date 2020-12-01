@@ -1,5 +1,4 @@
 const axios = require('axios');
-const { image } = require('faker');
 
 module.exports = {
     async getAboutInformation() {

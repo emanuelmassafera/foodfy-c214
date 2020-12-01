@@ -1,6 +1,6 @@
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
-const db = require("./db");
+const db = require("./db").get();
 
 module.exports = session({
    store: new pgSession({

@@ -1,9 +1,17 @@
-const { Pool } = require("pg");
+var { Pool } = require("pg"), db;
 
-module.exports = new Pool({
-    user: "postgres",
-    password: "admin",
-    host: "localhost",
-    port: 5432,
-    database: "foodfy"
-});
+module.exports = {
+    get() {
+        if(!db) {
+            db = new Pool({
+                user: "postgres",
+                password: "admin",
+                host: "localhost",
+                port: 5432,
+                database: "foodfy"
+            });
+        }
+
+        return db;
+    },
+};

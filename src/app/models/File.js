@@ -1,4 +1,4 @@
-const db = require("../../config/db");
+const db = require("../../config/db").get();
 
 module.exports = {
     async create({ filename, path, recipe_id }) {
