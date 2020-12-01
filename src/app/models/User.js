@@ -88,14 +88,14 @@ module.exports = {
 
             const results = await db.query(query, values);
 
-            await mailer.sendMail({
-                to: data.email,
-                from: 'no-reply@foody.com.br',
-                subject: 'Seu acesso ao Foodfy',
-                html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
-                <p>Utilize a senha ${token} para entrar em sua conta.</p>
-                `,
-            });
+            // await mailer.sendMail({
+            //     to: data.email,
+            //     from: 'no-reply@foody.com.br',
+            //     subject: 'Seu acesso ao Foodfy',
+            //     html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
+            //     <p>Utilize a senha ${token} para entrar em sua conta.</p>
+            //     `,
+            // });
 
             return results.rows[0].id;
 

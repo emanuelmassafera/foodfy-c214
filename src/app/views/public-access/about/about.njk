@@ -6,7 +6,7 @@
 {% endblock head %}
 
 {% block content %}
-    <section class="about">
+    <section id="dummyText" class="about">
         <div class="about-foodfy">
             <h2>Sobre o Foodfy</h2>
         </div>
@@ -48,5 +48,20 @@
                 </p>
             </div>
         </div>
+
+        <div class="random-images">
+            {% for image in images %}
+                <img src="{{image}}" /> 
+            {% endfor %}
+        </div>
+
     </section>
+
+    <div class="wrap-footer">
+        <button id="btnCreateFile">Gerar Arquivo .txt</button> 
+        <a download="aboutFoodfy.txt" id="downloadFile" style="display: none">Download</a>
+    </div>
+
+    <script src="/scripts/public-access/about/downloadFile.js"></script>
+
 {% endblock content %}

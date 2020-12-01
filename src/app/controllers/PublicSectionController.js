@@ -30,8 +30,16 @@ module.exports = {
 
     async about(req, res) {
         const about = await About.getAboutInformation();
+
+        let images = [];
+        let results = await About.getRandomFoodImages();
+        images.push(results.image);
+        results = await About.getRandomFoodImages();
+        images.push(results.image);
+        results = await About.getRandomFoodImages();
+        images.push(results.image);
         
-        return res.render("public-access/about/about", { about });
+        return res.render("public-access/about/about", { about, images });
     },
 
     async recipes(req, res) {

@@ -7,7 +7,6 @@ for (item of menuItems){
     }
 }
 
-console.log(_currentPage);
 let uploadLimit = 5;
 
 if(_currentPage.includes("chefs")) {

@@ -4,7 +4,7 @@
   "description": "Site completo de uma empresa de receitas chamada Foodfy",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon src/server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5001 --files public,src/app/views"

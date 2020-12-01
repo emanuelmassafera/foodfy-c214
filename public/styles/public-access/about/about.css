@@ -1,130 +1,177 @@
 * {
-    margin: 0;
-    border: 0;
-    padding: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
-body{
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    width: 940px;
-    height: 27px;
-    margin: 30px auto;
-    text-align: center;
-    position: relative;
+  width: 940px;
+  height: 27px;
+  margin: 30px auto;
+  text-align: center;
+  position: relative;
 }
 
 header img {
-    position: absolute;
-    left: 0;
-    width: 90.6px;
-    height: 26.9px;
-    opacity: 100%;
-    color: #111111;
+  position: absolute;
+  left: 0;
+  width: 90.6px;
+  height: 26.9px;
+  opacity: 100%;
+  color: #111111;
 }
 
 header .sobre {
-    position: absolute;
-    left: 25.2%;
-    width: 42px;
-    height: 19px;
-    opacity: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    color: #111111;
-    line-height: 30px;
-    font-weight: bold;
+  position: absolute;
+  left: 25.2%;
+  width: 42px;
+  height: 19px;
+  opacity: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  color: #111111;
+  line-height: 30px;
+  font-weight: bold;
 }
 
 header .receitas {
-    position: absolute;
-    left: 34.2%;
-    width: 42px;
-    height: 19px;
-    opacity: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    color: #111111;
-    line-height: 30px;
+  position: absolute;
+  left: 34.2%;
+  width: 42px;
+  height: 19px;
+  opacity: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  color: #111111;
+  line-height: 30px;
 }
 
 header .chefs {
-    position: absolute;
-    left: 45.2%;
-    width: 42px;
-    height: 19px;
-    opacity: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    color: #111111;
-    line-height: 30px;
+  position: absolute;
+  left: 45.2%;
+  width: 42px;
+  height: 19px;
+  opacity: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  color: #111111;
+  line-height: 30px;
 }
 
 header .filter {
-    display: none;
+  display: none;
 }
 
 .about {
-    width: 940px;
-    margin: 50px auto;
-    text-align: left;
-    position: relative;
-    opacity: 100%;
-    display: grid;
+  width: 940px;
+  margin: 50px auto;
+  text-align: left;
+  position: relative;
+  opacity: 100%;
+  display: grid;
 }
 
-.about-foodfy h2{
-    opacity: 100%;
-    font-weight: bold;
-    color: #111111;
-    font-size: 24px;
-    line-height: 28px;
+.about-foodfy h2 {
+  opacity: 100%;
+  font-weight: bold;
+  color: #111111;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .about p {
-    font-size: 18px;
-    opacity: 100%;
-    color: #444444;
-    line-height: 28px;
-    margin-top: 20px;
+  font-size: 18px;
+  opacity: 100%;
+  color: #444444;
+  line-height: 28px;
+  margin-top: 20px;
 }
 
-.how-foodfy-started h2{
-    opacity: 100%;
-    color: #111111;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: bold;
-    margin-top: 20px;
+.how-foodfy-started h2 {
+  opacity: 100%;
+  color: #111111;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .our-recipes h2 {
-    opacity: 100%;
-    color: #111111;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: bold;
-    margin-top: 20px;
+  opacity: 100%;
+  color: #111111;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .credits {
-    margin-top: auto;
-    background-color: #EEEEEE;
-    width: 100%;
-    height: 62px;
-    text-align: center;
+  margin-top: auto;
+  background-color: #eeeeee;
+  width: 100%;
+  height: 62px;
+  text-align: center;
 }
 
 .credits p {
-    opacity: 100%;
-    color: #999999;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 22px;
+  opacity: 100%;
+  color: #999999;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 22px;
+}
+
+.random-images {
+  width: 940px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.random-images img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.wrap-footer {
+  width: 940px;
+  margin: 0px auto 20px;
+  text-align: center;
+}
+
+#btnCreateFile {
+  background-color: #6558c3;
+  color: white;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  text-align: right;
+  padding: 9px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#downloadFile {
+  background-color: #6558c3;
+  color: white;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  text-align: right;
+  padding: 9px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
 }
