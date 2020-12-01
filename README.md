@@ -49,6 +49,7 @@ Foodfy é um site de receitas completo, que conta com parte de visita ao públic
 - **[Faker](https://github.com/Marak/Faker.js#readme)**
 - **[Axios](https://github.com/axios/axios)**
 - **[Bacon Ipsum API](https://baconipsum.com/json-api/)**
+- **[Foodish API](https://foodish-api.herokuapp.com/)**
 
 ---
 
