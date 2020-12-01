@@ -5,6 +5,34 @@ const mailer = require("../../lib/mailer");
 const Recipe = require("./Recipe");
 const fs = require('fs');
 
+async function userFactory(data) {
+    let user = {};
+
+    user.name = data.name;
+    user.email = data.email;
+    user.isAdmin = data.isAdmin || false;
+
+    const token = crypto.randomBytes(8).toString("hex");
+    const passwordHash = await hash(token, 8);
+
+    user.password = data.password || passwordHash;
+
+    async function sendMail() {
+        await mailer.sendMail({
+            to: data.email,
+            from: 'no-reply@foody.com.br',
+            subject: 'Seu acesso ao Foodfy',
+            html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
+            <p>Utilize a senha ${token} para entrar em sua conta.</p>
+            `,
+        });
+    }
+
+    user.sendMail = sendMail;
+
+    return user;
+}
+
 module.exports = {
     all() {
         try {
@@ -68,41 +96,35 @@ module.exports = {
                 RETURNING id
             `;
 
-            const token = crypto.randomBytes(8).toString("hex");
+            // const token = crypto.randomBytes(8).toString("hex");
 
             // Hash of password
-            const passwordHash = await hash(token, 8);
+            // const passwordHash = await hash(token, 8);
 
-            let isAdmin = false;
+            // let isAdmin = false;
 
-            if (data.isAdmin) {
-                isAdmin = true;
-            }
+            // if (data.isAdmin) {
+            //     isAdmin = true;
+            // }
+
+            const user = await userFactory(data);
 
             const values = [
-                data.name,
-                data.email,
-                data.password || passwordHash,
-                isAdmin
+                user.name,
+                user.email,
+                user.password,
+                user.isAdmin,
             ];
 
             const results = await db.query(query, values);
 
-            // await mailer.sendMail({
-            //     to: data.email,
-            //     from: 'no-reply@foody.com.br',
-            //     subject: 'Seu acesso ao Foodfy',
-            //     html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
-            //     <p>Utilize a senha ${token} para entrar em sua conta.</p>
-            //     `,
-            // });
+            user.sendMail();
 
             return results.rows[0].id;
 
         } catch (err) {
             console.error(err);
         }
-
     },
 
     async delete(id) {
