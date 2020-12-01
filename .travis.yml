@@ -7,3 +7,4 @@ before_script:
   - psql -c 'create database foodfy;' -U postgres
   - psql -d foodfy -f foodfydb.sql -U postgres
   - node seeds.js
+  - travis_wait 5 npm test
