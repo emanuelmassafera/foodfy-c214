@@ -18,14 +18,14 @@ async function userFactory(data) {
     user.password = data.password || passwordHash;
 
     async function sendMail() {
-        await mailer.sendMail({
-            to: data.email,
-            from: 'no-reply@foody.com.br',
-            subject: 'Seu acesso ao Foodfy',
-            html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
-            <p>Utilize a senha ${token} para entrar em sua conta.</p>
-            `,
-        });
+        // await mailer.sendMail({
+        //     to: data.email,
+        //     from: 'no-reply@foody.com.br',
+        //     subject: 'Seu acesso ao Foodfy',
+        //     html: `<h2>Seu acesso ao Foodfy foi liberado!</h2>
+        //     <p>Utilize a senha ${token} para entrar em sua conta.</p>
+        //     `,
+        // });
     }
 
     user.sendMail = sendMail;
