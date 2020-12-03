@@ -218,5 +218,3 @@ Pode ser que ao deletar um dos registros gerados automaticamente com o seeds, a 
 ## Licença <a name="-licenca" style="text-decoration:none"></a>
 
 Esse repositório está licenciado pela **MIT LICENSE**. Para informações detalhadas, leia o arquivo [LICENSE](https://github.com/emanuelmassafera/foodfy-c214/blob/master/LICENSE). 
-
-Made with ♥ by Emanuel Massafera :wave: [Get in touch!](https://www.linkedin.com/in/emanuelmassafera/)
