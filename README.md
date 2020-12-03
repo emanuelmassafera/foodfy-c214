@@ -21,7 +21,7 @@ Tabela de conteúdos
    * [Layout](#-layout)
    * [UML](#-uml)
    * [Como executar o projeto](#-como-executar-o-projeto)
-   * [Autor](#-autor)
+   * [Autores](#-autor)
    * [Licença](#-licenca)
 <!--te-->
 
@@ -207,14 +207,11 @@ Pode ser que ao deletar um dos registros gerados automaticamente com o seeds, a 
 
 ---
 
-## Autor <a name="-autor" style="text-decoration:none"></a>
+## Autores <a name="-autor" style="text-decoration:none"></a>
 
-<img style="border-radius: 50%;" src="https://avatars1.githubusercontent.com/u/65625500?s=460&u=eb9e300de61698fc8531949a451ce2f0e9da46f9&v=4" width="100px;" alt=""/>
-<sub>Emanuel Massafera</sub>
-
-<b></b>
-
-[![Badge](https://img.shields.io/static/v1?label=&message=Emanuel&color=blue&style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/emanuelmassafera/)](https://www.linkedin.com/in/emanuelmassafera/) [![Badge](https://img.shields.io/static/v1?label=&message=emanuel301@live.com&color=0078D4&style=flat-square&logo=Microsoft-Outlook&logoColor=white&link=mailto:emanuel301@live.com)](mailto:emanuel301@live.com)
+<p>👤 Emanuel Massafera Magalhães</p>
+<p>👤 Pedro Henrique de Almeida</p>
+<p>👤 Thiago Santos da Costa</p>
 
 ---
 
